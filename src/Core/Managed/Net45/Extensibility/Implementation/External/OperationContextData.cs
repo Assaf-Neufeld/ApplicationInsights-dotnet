@@ -57,38 +57,17 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
             set { this.tags.SetStringValueOrRemove(ContextTagKeys.Keys.OperationName, value); }
         }
 
-        public string ParentId
-        {
-            get { return this.tags.GetTagValueOrNull(ContextTagKeys.Keys.OperationParentId); }
-            set { this.tags.SetStringValueOrRemove(ContextTagKeys.Keys.OperationParentId, value); }
-        }
-
-        public string RootId
-        {
-            get { return this.tags.GetTagValueOrNull(ContextTagKeys.Keys.OperationRootId); }
-            set { this.tags.SetStringValueOrRemove(ContextTagKeys.Keys.OperationRootId, value); }
-        }
-
         public string SyntheticSource
         {
             get { return this.tags.GetTagValueOrNull(ContextTagKeys.Keys.OperationSyntheticSource); }
             set { this.tags.SetStringValueOrRemove(ContextTagKeys.Keys.OperationSyntheticSource, value); }
         }
 
-        public bool? IsSynthetic
-        {
-            get { return this.tags.GetTagBoolValueOrNull(ContextTagKeys.Keys.OperationIsSynthetic); }
-            set { this.tags.SetTagValueOrRemove(ContextTagKeys.Keys.OperationIsSynthetic, value); }
-        }
-
         internal void SetDefaults(OperationContextData source)
         {
             this.tags.InitializeTagValue(ContextTagKeys.Keys.OperationId, source.Id);
             this.tags.InitializeTagValue(ContextTagKeys.Keys.OperationName, source.Name);
-            this.tags.InitializeTagValue(ContextTagKeys.Keys.OperationParentId, source.ParentId);
-            this.tags.InitializeTagValue(ContextTagKeys.Keys.OperationRootId, source.RootId);
             this.tags.InitializeTagValue(ContextTagKeys.Keys.OperationSyntheticSource, source.SyntheticSource);
-            this.tags.InitializeTagValue(ContextTagKeys.Keys.OperationIsSynthetic, source.IsSynthetic);
         }
     }
 }

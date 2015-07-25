@@ -87,25 +87,13 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
         public string OperationName { get; set; }
 
         
-        public string OperationParentId { get; set; }
-
-        
-        public string OperationRootId { get; set; }
-
-        
         public string OperationSyntheticSource { get; set; }
-
-        
-        public string OperationIsSynthetic { get; set; }
 
         
         public string SessionId { get; set; }
 
         
         public string SessionIsFirst { get; set; }
-
-        
-        public string SessionIsNew { get; set; }
 
         
         public string UserAccountAcquisitionDate { get; set; }
@@ -157,13 +145,9 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
             LocationIp = "ai.location.ip";
             OperationId = "ai.operation.id";
             OperationName = "ai.operation.name";
-            OperationParentId = "ai.operation.parentId";
-            OperationRootId = "ai.operation.rootId";
             OperationSyntheticSource = "ai.operation.syntheticSource";
-            OperationIsSynthetic = "ai.operation.isSynthetic";
             SessionId = "ai.session.id";
             SessionIsFirst = "ai.session.isFirst";
-            SessionIsNew = "ai.session.isNew";
             UserAccountAcquisitionDate = "ai.user.accountAcquisitionDate";
             UserAccountId = "ai.user.accountId";
             UserAgent = "ai.user.userAgent";

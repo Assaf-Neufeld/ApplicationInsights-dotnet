@@ -58,20 +58,10 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
             set { this.tags.SetTagValueOrRemove<bool?>(ContextTagKeys.Keys.SessionIsFirst, value); }
         }
 
-        /// <summary>
-        /// Gets or sets the IsNewSession Session.
-        /// </summary>
-        public bool? IsNewSession 
-        {
-            get { return this.tags.GetTagBoolValueOrNull(ContextTagKeys.Keys.SessionIsNew); }
-            set { this.tags.SetTagValueOrRemove<bool?>(ContextTagKeys.Keys.SessionIsNew, value); }
-        }
-
         internal void SetDefaults(SessionContextData source)
         {
             this.tags.InitializeTagValue(ContextTagKeys.Keys.SessionId, source.Id);
             this.tags.InitializeTagValue(ContextTagKeys.Keys.SessionIsFirst, source.IsFirst);
-            this.tags.InitializeTagValue(ContextTagKeys.Keys.SessionIsNew, source.IsNewSession);
         }
     }
 }

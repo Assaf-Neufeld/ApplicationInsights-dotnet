@@ -31,7 +31,7 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
 #else
     internal
 #endif
-    sealed class UserContextData
+ sealed class UserContextData
     {
         private readonly IDictionary<string, string> tags;
 
@@ -46,7 +46,7 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
         /// <remarks>
         /// Unique user ID is automatically generated in default Application Insights configuration. 
         /// </remarks>
-        public string Id 
+        public string Id
         {
             get { return this.tags.GetTagValueOrNull(ContextTagKeys.Keys.UserId); }
             set { this.tags.SetStringValueOrRemove(ContextTagKeys.Keys.UserId, value); }
@@ -71,6 +71,15 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
         }
 
         /// <summary>
+        /// Gets or sets the UserAgent of an application-defined account associated with the user.
+        /// </summary>
+        public string AuthUserId
+        {
+            get { return this.tags.GetTagValueOrNull(ContextTagKeys.Keys.UserAuthUserId); }
+            set { this.tags.SetStringValueOrRemove(ContextTagKeys.Keys.UserAuthUserId, value); }
+        }
+
+        /// <summary>
         /// Gets or sets the StoreRegion of an application-defined account associated with the user.
         /// </summary>
         public string StoreRegion
@@ -85,12 +94,12 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
         /// <remarks>
         /// Acquisition date is automatically supplied in default Application Insights configuration.
         /// </remarks>
-        public DateTimeOffset? AcquisitionDate 
+        public DateTimeOffset? AcquisitionDate
         {
             get { return this.tags.GetTagDateTimeOffsetValueOrNull(ContextTagKeys.Keys.UserAccountAcquisitionDate); }
             set { this.tags.SetDateTimeOffsetValueOrRemove(ContextTagKeys.Keys.UserAccountAcquisitionDate, value); }
         }
-        
+
         /// <summary>
         /// Sets values on the current context based on the default context passed in.
         /// </summary>
@@ -101,6 +110,7 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
             this.tags.InitializeTagValue(ContextTagKeys.Keys.UserAccountId, source.AccountId);
             this.tags.InitializeTagDateTimeOffsetValue(ContextTagKeys.Keys.UserAccountAcquisitionDate, source.AcquisitionDate);
             this.tags.InitializeTagValue(ContextTagKeys.Keys.UserStoreRegion, source.StoreRegion);
+            this.tags.InitializeTagValue(ContextTagKeys.Keys.UserAuthUserId, source.AuthUserId);
         }
     }
 }

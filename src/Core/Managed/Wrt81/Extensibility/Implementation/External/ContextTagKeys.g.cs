@@ -24,117 +24,119 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
 {
     using System.Collections.Generic;
 
-    
-    
+
+
     [System.CodeDom.Compiler.GeneratedCode("gbc", "3.02")]
     internal partial class ContextTagKeys
     {
-        
+
         public string ApplicationVersion { get; set; }
 
-        
+
         public string ApplicationBuild { get; set; }
 
-        
+
         public string DeviceId { get; set; }
 
-        
+
         public string DeviceIp { get; set; }
 
-        
+
         public string DeviceLanguage { get; set; }
 
-        
+
         public string DeviceLocale { get; set; }
 
-        
+
         public string DeviceModel { get; set; }
 
-        
+
         public string DeviceNetwork { get; set; }
 
-        
+
         public string DeviceOEMName { get; set; }
 
-        
+
         public string DeviceOS { get; set; }
 
-        
+
         public string DeviceOSVersion { get; set; }
 
-        
+
         public string DeviceRoleInstance { get; set; }
 
-        
+
         public string DeviceRoleName { get; set; }
 
-        
+
         public string DeviceScreenResolution { get; set; }
 
-        
+
         public string DeviceType { get; set; }
 
-        
+
         public string DeviceMachineName { get; set; }
 
-        
+
         public string LocationIp { get; set; }
 
-        
+
         public string OperationId { get; set; }
 
-        
+
         public string OperationName { get; set; }
 
-        
+
         public string OperationParentId { get; set; }
 
-        
+
         public string OperationRootId { get; set; }
 
-        
+
         public string OperationSyntheticSource { get; set; }
 
-        
+
         public string OperationIsSynthetic { get; set; }
 
-        
+
         public string SessionId { get; set; }
 
-        
+
         public string SessionIsFirst { get; set; }
 
-        
+
         public string SessionIsNew { get; set; }
 
-        
+
         public string UserAccountAcquisitionDate { get; set; }
 
-        
+
         public string UserAccountId { get; set; }
 
-        
+
         public string UserAgent { get; set; }
 
-        
+
         public string UserId { get; set; }
 
-        
+
         public string UserStoreRegion { get; set; }
 
-        
-        
+
+        public string UserAuthUserId { get; set; }
+
+
         public string SampleRate { get; set; }
 
-        
+
         public string InternalSdkVersion { get; set; }
 
-        
+
         public string InternalAgentVersion { get; set; }
-        
+
         public ContextTagKeys()
             : this("AI.ContextTagKeys", "ContextTagKeys")
-        {}
+        { }
 
         protected ContextTagKeys(string fullName, string name)
         {
@@ -169,6 +171,7 @@ namespace Microsoft.ApplicationInsights.Extensibility.Implementation.External
             UserAgent = "ai.user.userAgent";
             UserId = "ai.user.id";
             UserStoreRegion = "ai.user.storeRegion";
+            UserAuthUserId = "ai.user.authUserId";
             SampleRate = "ai.sample.sampleRate";
             InternalSdkVersion = "ai.internal.sdkVersion";
             InternalAgentVersion = "ai.internal.agentVersion";
